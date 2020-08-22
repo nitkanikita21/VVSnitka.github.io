@@ -90,8 +90,8 @@
             function click(){
                 let nick = document.getElementById("nick").value;
                 alert(nick);
-                if(nick.match(/[а-яА-Я]+/g) !== null)return alert("Только EN символы")
-                open(donates[document.getElementById("select").value])
+                if(nick.match(/[а-яА-Я]+/g) !== null)return alert("Только EN символы");
+                else{open(donates[document.getElementById("select").value],nick);}
             }
         </script>
     </head>
@@ -107,7 +107,7 @@
             </select>
             <div class="box_text">Твой ник</div>
             <input class="nick" type="text" id="nick">
-            <input class="button" type="button" value="Купить" onclick="open()">
+            <input class="button" type="button" value="Купить" onclick="click()">
         </div>
     </body>
 </html>
