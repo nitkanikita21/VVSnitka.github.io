@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta property="og:title" content="Временный сайт покупки доната">
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="HighTwink (only PC)">
+        <meta property="og:image" content="/res/logo.png">
+        <meta property="og:url" content="/">
+
+        <style>
+            html{
+                min-height: 100%;
+                background: #2A2938;
+                background: -moz-radial-gradient(center, #2A2938 0%, #1A1B1F 50%, #09090D 100%);
+                background: -webkit-radial-gradient(center, #2A2938 0%, #1A1B1F 50%, #09090D 100%);
+                background: radial-gradient(ellipse at center, #2A2938 0%, #1A1B1F 50%, #09090D 100%);
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .title{
+                text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
+                font-size: 15mm;
+                color: white;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            .box_title{
+                text-shadow: 0 0 15px #FFF,0 0 15px #23ff23;
+                font-size: 7mm;
+                color: #23ff23;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                align-content: center;
+                text-align: center;
+            }
+            .box_text{
+                text-shadow: 0 0 15px #FFF,0 0 15px #23ff23;
+                font-size: 6mm;
+                color: white;
+                padding-top: 5pt;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                align-content: center;
+                text-align: center;
+            }
+            .box{
+                border-style: solid;
+                border-color: darkgrey;
+                border-radius: 6pt;
+                padding: 6pt;
+            }
+            select{
+                background-color: #2A2938;
+                color: cornsilk;
+                width: 164pt;
+                
+                padding: 4pt;
+            }
+            option{
+                color: cornsilk;
+            }
+            .nick{
+                color: #23ff23;
+                background-color: #1A1B1F;
+                border-color: #09090D;
+                margin: auto;
+            }
+            .button{
+                background-color: rgb(34, 32, 56);
+                border-color: #1A1B1F;
+                color: #23ff23;
+            }
+            
+        </style>
+        <script>
+            const donates = {
+                "Сапфир":1369160,
+                "Рубин":1369159,
+                "Брилиант":1369157,
+                "Адуляр":1327199,
+            }
+            function getLink(id,nick){
+                return "https://hightwink.mcdonate.ru/performOrder2/?mcdApi&server_id=300755&previ_id="+id+"&playerNickname="+encodeURI(nick)
+            }
+            function open(id,nick){
+                window.open(getLink(id,nick))
+            }
+            function log(){
+                alert(document.getElementById("select").value)
+            }
+            function click(){
+                let nick = document.getElementById("nick").value;
+                alert(nick);
+                if(nick.match(/[а-яА-Я]+/g) !== null)return alert("Только EN символы")
+                open(donates[document.getElementById("select").value])
+            }
+        </script>
+    </head>
+    <body>
+        <div class="title">DONATE</div>
+        <div class="box">
+            <div class="box_title">Выберите донат</div>
+            <select id="select">
+                <option>Сапфир</option>
+                <option>Рубин</option>
+                <option>Брилиант</option>
+                <option>Адуляр</option>
+            </select>
+            <div class="box_text">Твой ник</div>
+            <input class="nick" type="text" id="nick">
+            <input class="button" type="button" value="Купить" onclick="open()">
+        </div>
+    </body>
+</html>
+
+
+
+
