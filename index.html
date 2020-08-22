@@ -3,7 +3,7 @@
     <head>
         <meta property="og:title" content="Временный сайт покупки доната">
         <meta property="og:type" content="website">
-        <meta property="og:site_name" content="HighTwink (only PC)">
+        <meta property="og:site_name" content="HighTwink (only PC)\nДизайн принял ислам">
         <meta property="og:image" content="/res/logo.png">
         <meta property="og:url" content="/">
 
@@ -81,17 +81,17 @@
             function getLink(id,nick){
                 return "https://hightwink.mcdonate.ru/performOrder2/?mcdApi&server_id=300755&previ_id="+id+"&playerNickname="+encodeURI(nick)
             }
-            function open(id,nick){
+            function openUrl(id,nick){
                 window.open(getLink(id,nick))
             }
             function log(){
                 alert(document.getElementById("select").value)
             }
-            function click(){
+            function clickBt(){
                 let nick = document.getElementById("nick").value;
                 alert(nick);
                 if(nick.match(/[а-яА-Я]+/g) !== null)return alert("Только EN символы");
-                else{open(donates[document.getElementById("select").value],nick);}
+                else{openUrl(donates[document.getElementById("select").value],nick);}
             }
         </script>
     </head>
@@ -107,7 +107,7 @@
             </select>
             <div class="box_text">Твой ник</div>
             <input class="nick" type="text" id="nick">
-            <input class="button" type="button" value="Купить" onclick="click()">
+            <input class="button" type="button" value="Купить" onclick="clickBt()">
         </div>
     </body>
 </html>
